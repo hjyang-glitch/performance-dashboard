@@ -9,13 +9,12 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-`.streamlit/secrets.toml`에 `gcp_service_account` 블록이 필요합니다 (Google Cloud 서비스 계정 JSON).
-저장소는 public이므로 이 파일은 절대 커밋하지 마세요 (`.gitignore`에 이미 포함됨).
+별도 인증 설정 없이 바로 실행됩니다.
 
 ## 데이터 소스
 
-Google Sheet "퍼포먼스 대시보드 - 캠페인 일별 데이터" (`일별데이터` 탭)를 읽습니다.
-스프레드시트를 서비스 계정 이메일과 공유(Viewer 권한)해야 앱이 데이터를 읽을 수 있습니다.
+`data.py`에 임시 샘플 데이터가 하드코딩되어 있습니다. 채널+앱스플라이어 조인 파이프라인이
+완성되면 `load_campaign_data()` 내부만 실제 데이터 소스(시트/BigQuery 등) 조회로 교체하면 됩니다.
 
 ## 현재 범위
 
